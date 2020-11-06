@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.jun.pojo.Address"/>
+    <bean id="student" class="com.jun.pojo.Student">
+        <property name="name" value="hejun"/>
+
+        <property name="address" ref="address"/>
+
+        <property name="books">
+            <array>
+                <value>三国演义</value>
+                <value>西游记</value>
+                <value>水浒传</value>
+                <value>红楼梦</value>
+            </array>
+        </property>
+
+        <property name="hobbys">
+            <list>
+                <value>敲代码</value>
+                <value>看电影</value>
+                <value>听歌</value>
+            </list>
+        </property>
+
+        <property name="card">
+            <map>
+                <entry key="身份证" value="1111111"/>
+                <entry key="手机号" value="2222222"/>
+            </map>
+        </property>
+
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>王者荣耀</value>
+                <value>吃鸡</value>
+            </set>
+        </property>
+
+        <property name="wife">
+            <null></null>
+        </property>
+
+        <property name="info">
+            <props>
+                <prop key="driver">Mysql</prop>
+                <prop key="url">11111</prop>
+                <prop key="username">Xiaojun</prop>
+                <prop key="password">654321</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

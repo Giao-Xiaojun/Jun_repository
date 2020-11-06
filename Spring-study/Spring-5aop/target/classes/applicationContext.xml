@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.jun"/>
+
+    <bean id="userService" class="com.jun.service.UserServiceImpl"/>
+    <bean id="annotationPointcut" class="com.jun.diy.AnnotationPointcut"/>
+
+
+
+    <aop:aspectj-autoproxy/>
+    <!--    //方式一:API原生接口-->
+    <!--    <bean id="userService" class="com.jun.service.UserServiceImpl"/>-->
+    <!--    <bean id="afterLog" class="com.jun.Log.AfterLog"/>-->
+    <!--    <bean id="beforeLog" class="com.jun.Log.BeforeLog"/>-->
+
+    <!--    <aop:config>-->
+    <!--        <aop:pointcut id="pointcut" expression="execution(* com.jun.service.UserServiceImpl.*(..))"/>-->
+    <!--        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut"/>-->
+    <!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+    <!--    </aop:config>-->
+
+
+<!--    方式二：自定义类实现aop-->
+<!--    <bean id="dIy" class="com.jun.diy.DIy"/>-->
+<!--    <bean class="com.jun.service.UserServiceImpl" id="userService"/>-->
+
+<!--    <aop:config>-->
+<!--        <aop:aspect ref="dIy">-->
+<!--            <aop:pointcut id="point" expression="execution(* com.jun.service.UserServiceImpl.*(..))"/>-->
+<!--            <aop:before method="before" pointcut-ref="point"/>-->
+<!--            <aop:after method="after" pointcut-ref="point"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+</beans>

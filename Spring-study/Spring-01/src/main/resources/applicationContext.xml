@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hello" class="com.jun.pojo.Hello">
+<!--        1.直接通过参数名   -->
+<!--&lt;!&ndash;        <constructor-arg name="name" value="hejun"/>&ndash;&gt;-->
+<!--        2通过类型创建-->
+<!--&lt;!&ndash;        <constructor-arg type="java.lang.String" value="何俊"/>&ndash;&gt;-->
+<!--        3.通过下标来设置-->
+        <constructor-arg index="0" value="何俊"/>
+        <property name="str" value="西部开发"/>
+    </bean>
+
+</beans>
